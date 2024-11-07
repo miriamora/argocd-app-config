@@ -1,0 +1,26 @@
+# this Application: estephe-argo-app will be created in the same namespace where 
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: utrains-argo-app
+  namespace: argocd
+spec:
+  project: default
+  # add the git repo where argo CD will connect to track and sync changes
+  source:
+    repoURL: https://gitlab.com/kanaestephe/argocd-app-config.git
+    targetRevision: HEAD
+    # path totrack inside the repository
+    path: dev
+  # the destination could be the endpoint of K8s API server
+  destination: 
+    server: https://kubernetes.default.svc
+    namespace: mywebapp
+  # create a namespace specified in the destination cluster if it doesn't exist 
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+  # To enable automatic sync: argo CD pulls Git repo every 3 min to check if there is any changes
+    automated:
+      selfHeal: true
+      prune: true
