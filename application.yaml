@@ -8,7 +8,7 @@ spec:
   project: default
   # add the git repo where argo CD will connect to track and sync changes
   source:
-    repoURL: https://gitlab.com/kanaestephe/argocd-app-config.git
+    repoURL: https://github.com/utrains/argocd-app-config.git
     targetRevision: HEAD
     # path totrack inside the repository
     path: dev
