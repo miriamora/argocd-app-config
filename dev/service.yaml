@@ -7,5 +7,5 @@ spec:
   ports:
   - port: 8080
     protocol: TCP
-    targetPort: 8090
+    targetPort: 8080
   
