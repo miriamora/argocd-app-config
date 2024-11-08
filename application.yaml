@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: utrains-argo-app
+  name: utrains-argo
   namespace: argocd
 spec:
   project: default
