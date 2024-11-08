@@ -1,4 +1,4 @@
-#### Commands
+#### Commands to install and start Argo CD in a kubernetes cluster
 
 ```bash
 # install ArgoCD in k8s
@@ -24,10 +24,11 @@ kubectl get svc -n argocd
 # get the password to connect to the admin account
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
 
-
 # you can change and delete init password
 
 ```
+
+### Command to create an application on Argo-CD using  
 </br>
 
 #### Links to Official Documentation
