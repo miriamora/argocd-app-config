@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: estephekana/estephe-httpd:1.0
+        image: estephekana/estephe-httpd:2.0
         ports:
         - containerPort: 80
 
