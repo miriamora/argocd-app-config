@@ -12,9 +12,8 @@ spec:
       labels:
         app: myapp
     spec:
-      type: LoadLoadBalancer
       containers:
-      - name: myapp
-        image: nanajanashia/argocd-app:1.0
-        ports:
-        - containerPort: 8080
+        - name: myapp
+          image: nanajanashia/argocd-app:1.0
+          ports:
+          - containerPort: 8080
