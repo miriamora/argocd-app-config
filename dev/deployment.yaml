@@ -1,19 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: myapp
 spec:
   selector:
     matchLabels:
-      app: nginx
-  replicas: 3
+      app: myapp
+  replicas: 2
   template:
     metadata:
       labels:
-        app: nginxapp
+        app: myapp
     spec:
+      type: LoadLoadBalancer
       containers:
-        - name: nginx
-          image: nginx
-          ports:
-          - containerPort: 80
+      - name: myapp
+        image: nanajanashia/argocd-app:1.0
+        ports:
+        - containerPort: 8080
