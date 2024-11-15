@@ -15,7 +15,7 @@ spec:
   # the destination could be the endpoint of K8s API server
   destination: 
     server: https://kubernetes.default.svc
-    namespace: nginxapp
+    namespace: myapp
   # create a namespace specified in the destination cluster if it doesn't exist 
   syncPolicy:
     syncOptions:
