@@ -68,7 +68,27 @@ Make the following actions on the deployment file to see how Argo CD update the 
 1. Change the deployment name
 2. Change the container image to nginx:stable-alpine-perl
 3. change the number of replicas to 4
-4. Modify the service name 
+4. Modify the service name
+
+### Delete resources
+After successfully done this lab, you must delete all the resources created to avoid charges:
+
+```
+1. Delete the Argo CD application:
+kubectl delete -f application.yaml -n argocd
+
+2. Delete all resources inside argocd namespace:
+kubectl delete all --all -n argocd
+
+3. Delete argocd and myapp namespaces:
+kubectl delete namespace argocd
+kubectl delete namespace myapp
+
+4. Delete the EKS cluster:
+eksctl delete cluster --name utrains-eksctl-cluster
+
+
+```
 
 ### Links to Official Documentation of Argo CD:
 
