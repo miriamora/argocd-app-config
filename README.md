@@ -6,7 +6,7 @@
 ### Create your EKS cluster in AWS
 To create the EKS cluster for this lab, use the following commands:
 
-```bash
+```
 1. Set up a directory for cluster configuration
 mkdir eksctl-argo-project
 cd eksctl-argo-project
@@ -20,12 +20,14 @@ eksctl create cluster --name utrains-eksctl-cluster --region us-east-1 --nodegro
 4- Update the kubeconfig for the new cluster
 aws eks --region us-east-1 update-kubeconfig --name utrains-eksctl-cluster
 
-5- 
+5- Verify Cluster Nodes
+kubectl get nodes
+
 ```
 
 ### Install and start Argo CD in a Kubernetes cluster
 
-```bash
+```
 # install ArgoCD in k8s cluster
 
 # create a namespace for argo CD
