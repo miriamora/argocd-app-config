@@ -7,20 +7,20 @@
 To create the EKS cluster for this lab, use the following commands:
 
 ```
-1. Set up a directory for cluster configuration
+1. Set up a directory for cluster configuration:
 mkdir eksctl-argo-project
 cd eksctl-argo-project
 
-2. Verify your AWS identity
+2. Verify your AWS identity:
 aws sts get-caller-identity
 
-3. Create an EKS cluster
+3. Create an EKS cluster:
 eksctl create cluster --name utrains-eksctl-cluster --region us-east-1 --nodegroup-name my-nodes --node-type t3.medium --nodes 2 --nodes-min 1 --nodes-max 2
 
-4- Update the kubeconfig for the new cluster
+4- Update the kubeconfig for the new cluster:
 aws eks --region us-east-1 update-kubeconfig --name utrains-eksctl-cluster
 
-5- Verify Cluster Nodes
+5- Verify Cluster Nodes:
 kubectl get nodes
 
 ```
